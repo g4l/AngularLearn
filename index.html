@@ -15,88 +15,8 @@
     </div>
   </div>
 </div>
-<script>
-  angular.module('cardApp', [])
-    .directive('usercard', function() {
-          return {
-            restrict: 'AE',
-            scope: true,
-            template: `<div class="panel panel-info"  ng-repeat="(key, value) in users">
-            <div class="panel-heading">
-              <h3 class="panel-title">{{users[key].fullName}}</h3>
-              <button ng-click="viewMessage=!viewMessage">Прочитать</button>
-            </div>
-            <div class="panel-body" ng-if="viewMessage">
-              <div class="row">
-                <div class="col-md-9 col-lg-9 ">
-                  <table class="table table-user-information">
-                    <tbody>
-                      <tr>
-                        <img src='{{users[key].avatarUrl}}'>
-                      </tr>
-                      <tr>
-                        <td>Дата рождения</td>
-                        <td>{{users[key].birthdate}}</td>
-                      </tr>
-                      <tr>
-                        <td>пол</td>
-                        <td>{{users[key].gender}}</td>
-                      </tr>
-                      <tr>
-                        <td>Адрес</td>
-                        <td>{{users[key].address}}</td>
-                      </tr>
-                      <tr>
-                        <td>Email</td>
-                        <td>
-                          <a href="mailto:{{users[key].email}}">{{users[key].email}}</a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>`,
-          link: function(scope){
-            scope.viewMessage = false,
-            scope.viewList = true,
-            scope.users = [
-                            {
-                              "id": 1,
-                              "fullName": "Иванов Иван",
-                              "avatarUrl": "https://randomuser.me/api/portraits/thumb/men/57.jpg",
-                              "birthdate": "1976-10-10",
-                              "gender": "мужской",
-                              "address": "ул. Звенигороская, 47б",
-                              "email": "ivanov@mail.ru",
-                              "theme": "Курс Angular JS",
-                              "message": "Пссс! Парень! Не хочешь немного ангуляра?"
-                            },
-                            {
-                              "id": 2,
-                              "fullName": "Петров Петр",
-                              "avatarUrl": "https://randomuser.me/api/portraits/thumb/men/7.jpg",
-                              "birthdate": "1957-01-14",
-                              "gender": "мужской",
-                              "address": "ул.Пушкиская, 13",
-                              "email": "petro@mail.ru"
-                            },
-                            {
-                              "id": 3,
-                              "fullName": "Натальина Наталья",
-                              "avatarUrl": "https://randomuser.me/api/portraits/thumb/women/7.jpg",
-                              "birthdate": "1990-07-03",
-                              "gender": "женский",
-                              "address": "ул. Лермонтова, 59",
-                              "email": "nata@mail.ru"
-                            }
-                          ]
-          }
-          }
-    });
-</script>
 </body>
+<script src="js/app.js"></script>
 </html>
 
 
